@@ -41,4 +41,48 @@ public class Employee {
 	public void setIsmanager(boolean ismanager) {
 		this.ismanager = ismanager;
 	}
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + e_id;
+		result = prime * result + (ismanager ? 1231 : 1237);
+		result = prime * result + ((password == null) ? 0 : password.hashCode());
+		result = prime * result + ((username == null) ? 0 : username.hashCode());
+		return result;
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Employee other = (Employee) obj;
+		if (e_id != other.e_id)
+			return false;
+		if (ismanager != other.ismanager)
+			return false;
+		if (password == null) {
+			if (other.password != null)
+				return false;
+		} else if (!password.equals(other.password))
+			return false;
+		if (username == null) {
+			if (other.username != null)
+				return false;
+		} else if (!username.equals(other.username))
+			return false;
+		return true;
+	}
+	@Override
+	public String toString() {
+		return "Employee [e_id=" + e_id + ", username=" + username + ", password=" + password + ", ismanager="
+				+ ismanager + "]";
+	}
+	
+	
+	
+	
 }
