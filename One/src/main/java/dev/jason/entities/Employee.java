@@ -1,4 +1,4 @@
-package entities;
+package dev.jason.entities;
 
 public class Employee {
 	// DATA MEMBERS / FIELDS

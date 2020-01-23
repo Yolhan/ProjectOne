@@ -8,8 +8,9 @@ import java.util.List;
 import org.junit.Assert;
 import org.junit.Test;
 
-import daos.ReimbursementDAOS;
-import entities.Reimbursement;
+import dev.jason.daos.ReimbursementDAOS;
+import dev.jason.daos.ReimbursementJDBCDAOS;
+import dev.jason.entities.Reimbursement;
 
 public class ReimbursedmentTest {
 	ReimbursementDAOS rd = new ReimbursementJDBCDAOS();

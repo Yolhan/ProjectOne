@@ -1,8 +1,8 @@
-package daos;
+package dev.jason.daos;
 
 import java.util.List;
 
-import entities.Reimbursement;
+import dev.jason.entities.Reimbursement;
 
 public class ReimbursementJDBCDAOS implements ReimbursementDAOS {
 

@@ -7,10 +7,11 @@ import java.util.List;
 
 import org.junit.Test;
 
-import daos.CourseDAOS;
-import daos.EmployeeDAOS;
-import entities.Course;
-import entities.Employee;
+import dev.jason.daos.CourseDAOS;
+import dev.jason.daos.EmployeeDAOS;
+import dev.jason.daos.EmployeeJDBCDAOS;
+import dev.jason.entities.Course;
+import dev.jason.entities.Employee;
 import junit.framework.Assert;
 
 public class EmployeeTest {

@@ -7,8 +7,9 @@ import java.util.List;
 
 import org.junit.Test;
 
-import daos.CourseDAOS;
-import entities.Course;
+import dev.jason.daos.CourseDAOS;
+import dev.jason.daos.CourseJDBCDAOS;
+import dev.jason.entities.Course;
 import junit.framework.Assert;
 
 public class CourseTest {

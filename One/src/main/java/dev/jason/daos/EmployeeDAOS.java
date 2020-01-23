@@ -1,8 +1,8 @@
-package daos;
+package dev.jason.daos;
 
 import java.util.List;
 
-import entities.Employee;
+import dev.jason.entities.Employee;
 
 public interface EmployeeDAOS {
 //CRUD

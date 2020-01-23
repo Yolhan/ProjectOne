@@ -1,4 +1,4 @@
-package entities;
+package dev.jason.entities;
 
 public class Reimbursement {
 	// DATA MEMBERS / FIELDS

@@ -1,8 +1,8 @@
-package daos;
+package dev.jason.daos;
 
 import java.util.List;
 
-import entities.Course;
+import dev.jason.entities.Course;
 
 public interface CourseDAOS {
 
