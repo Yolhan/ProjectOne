@@ -64,10 +64,10 @@ public class ReimbursedmentTest {
 		reimbursement.setR_id(5);
 		
 		boolean result = rd.removeReimbursement(reimbursement);
-		Assert.assertArrayEquals(true, result);
+		Assert.assertEquals(true, result);
 		
 		// Negative test case
 		result = rd.removeReimbursement(reimbursement);
-		Assert.assertArrayEquals(false, result);
+		Assert.assertEquals(false, result);
 	}
 }
