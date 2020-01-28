@@ -16,7 +16,7 @@ public class ReimbursedmentTest {
 	ReimbursementDAOS rd = new ReimbursementJDBCDAOS();
 	@Test
 	public void createReimbursementTest() {
-		Reimbursement reimbursement = new Reimbursement(0, 4, 4, 1, "Order Pending");
+		Reimbursement reimbursement = new Reimbursement(0, 4, 4, 2, "Order Pending");
 		reimbursement = rd.createReimbursement(reimbursement);
 		System.out.println(reimbursement);
 		Assert.assertNotNull(reimbursement);
@@ -61,10 +61,11 @@ public class ReimbursedmentTest {
 	@Test
 	public void removeReimbursementTest() {
 		Reimbursement reimbursement = new Reimbursement();
-		reimbursement.setR_id(5);
+		reimbursement.setR_id(3);
 		
 		boolean result = rd.removeReimbursement(reimbursement);
 		Assert.assertEquals(true, result);
+		System.out.println(reimbursement);
 		
 		// Negative test case
 		result = rd.removeReimbursement(reimbursement);

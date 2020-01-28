@@ -17,7 +17,7 @@ import junit.framework.Assert;
 public class EmployeeTest {
 
 	@Test
-	public void getemployeebyIDTest() {
+	public void getEmployeebyIDTest() {
 		EmployeeDAOS ed = new EmployeeJDBCDAOS();
 		Employee employee = new Employee();
 		
@@ -28,7 +28,7 @@ public class EmployeeTest {
 		System.out.println(employee);
 		
 		// Negative test case
-		employee.setE_id(6);
+		employee.setE_id(600);
 		employee = ed.getEmployeebyID(employee.getE_id());
 		Assert.assertNull(employee);
 		System.out.println(employee);
@@ -47,15 +47,16 @@ public class EmployeeTest {
 	@Test
 	public void updateEmployeeTest() {
 		EmployeeDAOS ed = new EmployeeJDBCDAOS();
-		Employee employee = new Employee(6, "Phylicia the Great", "I_Rock", true);
+		Employee employee = new Employee(6, "Phylicia the Great and powerful", "I_Roll", false);
 		
 		employee = ed.updateEmployee(employee);
 		Assert.assertNotNull(employee);
 		System.out.println(employee);
 
 		employee.setE_id(22);
-		ed.updateEmployee(employee);
+		employee = ed.updateEmployee(employee);
 		Assert.assertNull(employee);
+		System.out.println(employee);
 		
 	}
 	

@@ -33,9 +33,8 @@ public class CourseTest {
 	}
 	
 	@Test
-	public void getEmployeesTest() {
+	public void getCoursesTest() {
 		CourseDAOS cd = new CourseJDBCDAOS();
-		Course course = new Course();
 		
 		List<Course> courses = new ArrayList<Course>(cd.getCourses());
 		for (Course course2 : courses) {
@@ -44,7 +43,7 @@ public class CourseTest {
 	}
 	
 	@Test
-	public void updateEmployeeTest() {
+	public void updateCoursesTest() {
 		CourseDAOS cd = new CourseJDBCDAOS();
 		Course course = new Course(9, "Test Cloning Class", 1500);
 		Course course2 = new Course();
