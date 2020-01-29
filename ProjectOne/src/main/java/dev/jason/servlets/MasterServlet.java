@@ -6,12 +6,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import dev.jason.controllers.EmployeeController;
+
 /**
  * Servlet implementation class MasterServlet
  */
 public class MasterServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+       private EmployeeController ec = new EmployeeController();
 
     public MasterServlet() {
         super();
