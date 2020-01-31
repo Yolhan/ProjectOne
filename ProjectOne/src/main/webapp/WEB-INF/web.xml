@@ -7,7 +7,6 @@
   <servlet>
   	<servlet-name>MasterServlet</servlet-name>
   	<display-name>MasterServlet</display-name>
-  	<description></description>
   	<servlet-class>dev.jason.servlets.MasterServlet</servlet-class>
   </servlet>
   <servlet-mapping>

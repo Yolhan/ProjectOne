@@ -25,16 +25,23 @@ public class ConnectionUtil {
 		} else
 			return connection;
 	}
-	
-	
 
 	private static Connection createConnection() {
 		Properties props = new Properties();
 		FileInputStream in;
 
+		
+		try {
+			Class.forName("org.mariadb.jdbc.Driver");
+		} catch (ClassNotFoundException e1) {
+			e1.printStackTrace();
+		}
+	
+		
 		try {
 			//in = new FileInputStream("src/main/resources/connection.properties");
-			in = new FileInputStream("resources/connection.properties");
+			in = new FileInputStream("C:\\Users\\hails\\Desktop\\ProjectOne\\ProjectOne\\resources\\connection.properties");
+			///ProjectOne/resources/connection.properties
 			
 			props.load(in);
 		} catch (IOException e) {

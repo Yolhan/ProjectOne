@@ -1,42 +1,50 @@
 <html>
+
 <body style="background-color: black; color: royalblue;">
-<h1>Login</h1>
-<input type="text" id="username" placeholder="Username">
-<input type="password" id="password" placeholder="Password">
-<button onclick="onClick()" style="background-color: royalblue; color: black; border-color: transparent;">Submit</button>
-<h4 id="result" style="color: red;"></h4>
+    <h1>Login</h1>
+    <input type="text" id="username" placeholder="Username">
+    <input type="password" id="password" placeholder="Password">
+    <button onclick="onClick()"
+        style="background-color: royalblue; color: black; border-color: transparent;">Submit</button>
+    <h4 id="result" style="color: red;"></h4>
 </body>
 
 <script>
-function onClick() {
-    let xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function(){
-        if(this.readyState === 4 && this.status === 200){
-            console.log(this.responseText);
-            let employee = JSON.parse(this.responseText);
-            // TODO:: if failed make username / password incorrect
-            if (employee === null) {
-                document.getElementById("result").innerHTML = "Username and/or Password is incorrect.";
-            } else if(employee.is_manager) {
-                // TODO:: send to manager page
-            } else if (!employee.is_manager) {
-                // TODO:: Send to employee page
+    function onClick() {
+        let xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+
+
+            if (this.readyState === 4 && this.status === 200) {
+
+                let URL = this.responseText;
+                console.log(this.responseText);
+                console.log(URL);
+
+                if (URL == "fail") {
+                    console.log("Changing the <h1> for fail code from client side");
+                    document.getElementById("result").innerHTML = "Username and / or Password is incorrect";
+                } else {
+                    // Git Gone
+                    console.log("redirecting to new location from client side")
+                    document.location.href = URL;
+
+                }
             }
         }
+        xhttp.open("POST", "http://localhost:8080/ProjectOne/getLogin.do");
+        xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+        let employee = new Object();
+        employee.username = document.getElementById("username").value;
+        employee.password = document.getElementById("password").value;
+        let json = JSON.stringify(employee);
+        console.log(json);
+
+
+        xhttp.send(`payload=${json}`);
+
     }
-
-    xhttp.open("POST","http://localhost:8080/ProjectOne/getLogin.do");
-    xhttp.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
-
-    let employee = new Object();
-    employee.username = document.getElementById("username").value;
-    employee.password = document.getElementById("password").value;
-    employee.id = 0;
-    employee.is_manager = false;
-    let json = JSON.stringify(employee);
-
-    xhttp.send(`payload=${json}`);
-}
 </script>
 
 </html>
